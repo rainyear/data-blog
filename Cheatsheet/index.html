@@ -102,138 +102,32 @@
 <h2 id="scientific-python-cheatsheet">Scientific Python Cheatsheet</h2>
 <p><a href="https://github.com/IPGP">IPGP</a> / <a href="https://ipgp.github.io/scientific_python_cheat_sheet/">Scientific Python Cheatsheet</a></p>
 <h3 id="numpy">NumPy</h3>
-<h4 id="array-initialization">array initialization</h4>
-<pre><code class="python">import numpy as np
-
-a = np.array([2, 3, 4])                # direct initialization
-print(a)
-print(np.empty(20, dtype=np.float32))  # single precision array with 20 entries
-print(np.zeros(200))                   # initialize 200 zeros
-print(np.ones((3,3), dtype=np.int32))  # 3 x 3 integer matrix with ones
-print(np.eye(200))                     # ones on the diagonal
-print(np.zeros_like(a))                # returns array with zeros and the shape of a
-print(np.linspace(0., 10., 100))       # 100 points from 0 to 10
-print(np.arange(0, 100, 2))            # points from 0 to &lt;100 with step width 2
-print(np.logspace(-5, 2, 100))         # 100 log-spaced points between 1e-5 and 1e2
-print(np.copy(a))                      # copy array to new memory
+<pre><code class="py"># array initialization
+np.array([2, 3, 4])             # direct initialization
+np.empty(20, dtype=np.float32)  # single precision array with 20 entries
+np.zeros(200)                   # initialize 200 zeros
+np.ones((3,3), dtype=np.int32)  # 3 x 3 integer matrix with ones
+np.eye(200)                     # ones on the diagonal
+np.zeros_like(a)                # returns array with zeros and the shape of a
+np.linspace(0., 10., 100)       # 100 points from 0 to 10
+np.arange(0, 100, 2)            # points from 0 to &lt;100 with step width 2
+np.logspace(-5, 2, 100)         # 100 log-spaced points between 1e-5 and 1e2
+np.copy(a)                      # copy array to new memory
 </code></pre>
 
-<pre><code>[2 3 4]
-[  0.00000000e+00   0.00000000e+00   3.89011036e-29   2.52435490e-29
-   3.23261115e-38   1.40129846e-45   3.57082238e-39   1.40129846e-45
-   8.85408977e-37   1.40129846e-45   7.15870966e-37   1.40129846e-45
-   2.33396757e-36   1.40129846e-45   3.11699449e-38   1.40129846e-45
-   3.89158039e-29   4.65661287e-10   0.00000000e+00   0.00000000e+00]
-[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
-  0.  0.]
-[[1 1 1]
- [1 1 1]
- [1 1 1]]
-[[ 1.  0.  0. ...,  0.  0.  0.]
- [ 0.  1.  0. ...,  0.  0.  0.]
- [ 0.  0.  1. ...,  0.  0.  0.]
- ..., 
- [ 0.  0.  0. ...,  1.  0.  0.]
- [ 0.  0.  0. ...,  0.  1.  0.]
- [ 0.  0.  0. ...,  0.  0.  1.]]
-[0 0 0]
-[  0.           0.1010101    0.2020202    0.3030303    0.4040404
-   0.50505051   0.60606061   0.70707071   0.80808081   0.90909091
-   1.01010101   1.11111111   1.21212121   1.31313131   1.41414141
-   1.51515152   1.61616162   1.71717172   1.81818182   1.91919192
-   2.02020202   2.12121212   2.22222222   2.32323232   2.42424242
-   2.52525253   2.62626263   2.72727273   2.82828283   2.92929293
-   3.03030303   3.13131313   3.23232323   3.33333333   3.43434343
-   3.53535354   3.63636364   3.73737374   3.83838384   3.93939394
-   4.04040404   4.14141414   4.24242424   4.34343434   4.44444444
-   4.54545455   4.64646465   4.74747475   4.84848485   4.94949495
-   5.05050505   5.15151515   5.25252525   5.35353535   5.45454545
-   5.55555556   5.65656566   5.75757576   5.85858586   5.95959596
-   6.06060606   6.16161616   6.26262626   6.36363636   6.46464646
-   6.56565657   6.66666667   6.76767677   6.86868687   6.96969697
-   7.07070707   7.17171717   7.27272727   7.37373737   7.47474747
-   7.57575758   7.67676768   7.77777778   7.87878788   7.97979798
-   8.08080808   8.18181818   8.28282828   8.38383838   8.48484848
-   8.58585859   8.68686869   8.78787879   8.88888889   8.98989899
-   9.09090909   9.19191919   9.29292929   9.39393939   9.49494949
-   9.5959596    9.6969697    9.7979798    9.8989899   10.        ]
-[ 0  2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48
- 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98]
-[  1.00000000e-05   1.17681195e-05   1.38488637e-05   1.62975083e-05
-   1.91791026e-05   2.25701972e-05   2.65608778e-05   3.12571585e-05
-   3.67837977e-05   4.32876128e-05   5.09413801e-05   5.99484250e-05
-   7.05480231e-05   8.30217568e-05   9.77009957e-05   1.14975700e-04
-   1.35304777e-04   1.59228279e-04   1.87381742e-04   2.20513074e-04
-   2.59502421e-04   3.05385551e-04   3.59381366e-04   4.22924287e-04
-   4.97702356e-04   5.85702082e-04   6.89261210e-04   8.11130831e-04
-   9.54548457e-04   1.12332403e-03   1.32194115e-03   1.55567614e-03
-   1.83073828e-03   2.15443469e-03   2.53536449e-03   2.98364724e-03
-   3.51119173e-03   4.13201240e-03   4.86260158e-03   5.72236766e-03
-   6.73415066e-03   7.92482898e-03   9.32603347e-03   1.09749877e-02
-   1.29154967e-02   1.51991108e-02   1.78864953e-02   2.10490414e-02
-   2.47707636e-02   2.91505306e-02   3.43046929e-02   4.03701726e-02
-   4.75081016e-02   5.59081018e-02   6.57933225e-02   7.74263683e-02
-   9.11162756e-02   1.07226722e-01   1.26185688e-01   1.48496826e-01
-   1.74752840e-01   2.05651231e-01   2.42012826e-01   2.84803587e-01
-   3.35160265e-01   3.94420606e-01   4.64158883e-01   5.46227722e-01
-   6.42807312e-01   7.56463328e-01   8.90215085e-01   1.04761575e+00
-   1.23284674e+00   1.45082878e+00   1.70735265e+00   2.00923300e+00
-   2.36448941e+00   2.78255940e+00   3.27454916e+00   3.85352859e+00
-   4.53487851e+00   5.33669923e+00   6.28029144e+00   7.39072203e+00
-   8.69749003e+00   1.02353102e+01   1.20450354e+01   1.41747416e+01
-   1.66810054e+01   1.96304065e+01   2.31012970e+01   2.71858824e+01
-   3.19926714e+01   3.76493581e+01   4.43062146e+01   5.21400829e+01
-   6.13590727e+01   7.22080902e+01   8.49753436e+01   1.00000000e+02]
-[2 3 4]
-</code></pre>
-<h4 id="array-properties-and-operations">array properties and operations</h4>
-<pre><code class="python">a = np.array([[3,2,1],[6,5,4]])
-print(a)
-print(a.shape)                # a tuple with the lengths of each axis
-print(len(a))                 # length of axis 0
-print(a.ndim)                 # number of dimensions (axes)
-a.sort(axis=1)                # sort array along axis
-print(a)
-print(a.flatten())            # collapse array to one dimension
-print(a.conj())               # return complex conjugate
-print(a.astype(np.int16))     # cast to integer
-print(np.argmax(a, axis=1))   # return index of maximum along a given axis
-print(np.cumsum(a))           # return cumulative sum
-print(np.any(a))              # True if any element is True
-print(np.all(a))              # True if all elements are True
-print(np.argsort(a, axis=1))  # return sorted index arr
-</code></pre>
-
-<pre><code>[[3 2 1]
- [6 5 4]]
-(2, 3)
-2
-2
-[[1 2 3]
- [4 5 6]]
-[1 2 3 4 5 6]
-[[1 2 3]
- [4 5 6]]
-[[1 2 3]
- [4 5 6]]
-[2 2]
-[ 1  3  6 10 15 21]
-True
-True
-[[0 1 2]
- [0 1 2]]
-</code></pre>
-<pre><code class="python">
+<pre><code class="py"># array properties and operations
+a.shape                # a tuple with the lengths of each axis
+len(a)                 # length of axis 0
+a.ndim                 # number of dimensions (axes)
+a.sort(axis=1)         # sort array along axis
+a.flatten()            # collapse array to one dimension
+a.conj()               # return complex conjugate
+a.astype(np.int16)     # cast to integer
+np.argmax(a, axis=2)   # return index of maximum along a given axis
+np.cumsum(a)           # return cumulative sum
+np.any(a)              # True if any element is True
+np.all(a)              # True if all elements are True
+np.argsort(a, axis=1)  # return sorted index array along axis
 </code></pre></div>
         </div>
 
