@@ -1,2 +1,5 @@
+pages:
+- {Home: index.md}
+- {Cheatsheet: Cheatsheet.md}
 site_name: Data Lab
-theme: readthedocs
+theme: flatly

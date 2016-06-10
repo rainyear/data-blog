@@ -545,7 +545,7 @@ def output_post_save(model, os_path, contents_manager):
 
         if title == _DEFAULT_CATEGORY:
             dest_name = "index.md"
-        subprocess.check_output("mv {} {}".format(os_path, pjoin(dest_dir,
+        subprocess.check_output("cp {} {}".format(os_path, pjoin(dest_dir,
                                                                  dest_name)),
                                 shell=True)
     isCatePage = False
