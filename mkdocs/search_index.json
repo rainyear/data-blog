@@ -1,0 +1,34 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to My Data Lab",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-my-data-lab",
+            "text": "",
+            "title": "Welcome to My Data Lab"
+        },
+        {
+            "location": "/About/",
+            "text": "How to",
+            "title": "About"
+        },
+        {
+            "location": "/About/#how-to",
+            "text": "",
+            "title": "How to"
+        },
+        {
+            "location": "/HowTo/",
+            "text": "hello",
+            "title": "HowTo"
+        },
+        {
+            "location": "/Vis/\u53ef\u89c6\u5316\u6570\u636e/",
+            "text": "print(\"hello\")\n\n\n\n\nhello",
+            "title": "\u53ef\u89c6\u5316\u6570\u636e"
+        }
+    ]
+}
