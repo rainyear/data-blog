@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to My Data Lab",
+            "text": "Welcome to My Data Lab\n\n\n0. Requirements\n\n\n\n\nconda\n\n\nJupyter\n\n\nMkDocs\n\n\n\n\n1. Setup Env\n\n\nconda update conda\nconda env create --name data --clone root\nsource active data\npip install mkdocs\n\n\n\n\n2. Start Jupyter\n\n\njupyter notebook --config config/jupyter_notebook_config.py\n\n\n\n\n3. Deploy to GitHub Pages\n\n\nmkdocs gh-deploy --clean",
             "title": "Home"
         },
         {
@@ -11,24 +11,24 @@
             "title": "Welcome to My Data Lab"
         },
         {
-            "location": "/About/",
-            "text": "How to",
-            "title": "About"
+            "location": "/#0-requirements",
+            "text": "conda  Jupyter  MkDocs",
+            "title": "0. Requirements"
         },
         {
-            "location": "/About/#how-to",
-            "text": "",
-            "title": "How to"
+            "location": "/#1-setup-env",
+            "text": "conda update conda\nconda env create --name data --clone root\nsource active data\npip install mkdocs",
+            "title": "1. Setup Env"
         },
         {
-            "location": "/HowTo/",
-            "text": "hello",
-            "title": "HowTo"
+            "location": "/#2-start-jupyter",
+            "text": "jupyter notebook --config config/jupyter_notebook_config.py",
+            "title": "2. Start Jupyter"
         },
         {
-            "location": "/Vis/\u53ef\u89c6\u5316\u6570\u636e/",
-            "text": "print(\"hello\")\n\n\n\n\nhello",
-            "title": "\u53ef\u89c6\u5316\u6570\u636e"
+            "location": "/#3-deploy-to-github-pages",
+            "text": "mkdocs gh-deploy --clean",
+            "title": "3. Deploy to GitHub Pages"
         }
     ]
 }
