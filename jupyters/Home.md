@@ -27,3 +27,8 @@ jupyter notebook --config config/jupyter_notebook_config.py
 ```
 mkdocs gh-deploy --clean
 ```
+
+---
+
+- Author: [Yusheng](http://rainy.im)
+- GitHub: [data-blog](https://github.com/rainyear/data-blog)
