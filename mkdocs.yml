@@ -1,5 +1,6 @@
 pages:
 - {Home: index.md}
 - {Cheatsheet: Cheatsheet.md}
+- {About: About.md}
 site_name: Data Lab
 theme: flatly
