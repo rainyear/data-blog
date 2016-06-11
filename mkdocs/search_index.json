@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to My Data Lab\n\n\n0. Requirements\n\n\n\n\nconda\n\n\nJupyter\n\n\nMkDocs\n\n\n\n\n1. Setup Env\n\n\nconda update conda\nconda env create --name data --clone root\nsource active data\npip install mkdocs\n\n\n\n\n2. Start Jupyter\n\n\njupyter notebook --config config/jupyter_notebook_config.py\n\n\n\n\n3. Deploy to GitHub Pages\n\n\nmkdocs gh-deploy --clean",
+            "text": "Welcome to My Data Lab\n\n\n0. Requirements\n\n\n\n\nconda\n\n\nJupyter\n\n\nMkDocs\n\n\n\n\n1. Setup Env\n\n\nconda update conda\nconda env create --name data --clone root\nsource active data\npip install mkdocs\n\n\n\n\n2. Start Jupyter\n\n\njupyter notebook --config config/jupyter_notebook_config.py\n\n\n\n\n3. Deploy to GitHub Pages\n\n\nmkdocs gh-deploy --clean\n\n\n\n\n\n\n\n\nAuthor: \nYusheng\n\n\nGitHub: \ndata-blog",
             "title": "Home"
         },
         {
@@ -27,7 +27,7 @@
         },
         {
             "location": "/#3-deploy-to-github-pages",
-            "text": "mkdocs gh-deploy --clean",
+            "text": "mkdocs gh-deploy --clean    Author:  Yusheng  GitHub:  data-blog",
             "title": "3. Deploy to GitHub Pages"
         },
         {
