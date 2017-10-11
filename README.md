@@ -1,5 +1,5 @@
 # data-blog
-Data blog generated with Jupyter &amp; MkDocs
+Data blog generated with Jupyter &amp; MkDocs [See Demo](http://rainyear.github.com/data-blog)
 
 ### 0. Requirements
 
